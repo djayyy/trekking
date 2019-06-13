@@ -31,7 +31,6 @@ if(err){
   console.log('atlas connected');
 }
 });
-
 var cons = require('consolidate');
 // view engine setup
 app.engine('html', cons.swig)
@@ -90,7 +89,7 @@ app.get('/paystack/callback', (req,res) => {
 
       donor.save().then((donor)=>{
           if(!donor){
-              return res.redirect('/error');
+              return res.redirect('/error');6
           }
           res.redirect('/receipt/'+donor._id);
       }).catch((e)=>{
